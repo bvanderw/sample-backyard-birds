@@ -1,34 +1,40 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
+//
+// See the LICENSE.txt file for this sample’s licensing information.
+//
+// Abstract:
+// The backyard visitors tab.
 
-Abstract:
-The backyard visitors tab.
-*/
-
-import SwiftUI
 import BackyardBirdsData
 import BackyardBirdsUI
 import LayeredArtworkLibrary
+import SwiftUI
 
-struct BackyardVisitorsTab: View {
-    var backyard: Backyard
-    
-    var body: some View {
-        List {
-            if let bird = backyard.currentVisitorEvent?.bird {
-                Section("Here Now") {
-                    HStack {
-                        BirdIcon(bird: bird)
-                            .frame(width: 60, height: 60)
-                        Text(bird.speciesName)
-                    }
-                }
-            }
-            
-            Section("Recent") {
-                RecentBackyardVisitorsView(backyard: backyard)
-            }
+struct BackyardVisitorsTab: View
+{
+  var backyard: Backyard
+
+  var body: some View
+  {
+    List
+    {
+      if let bird = backyard.currentVisitorEvent?.bird
+      {
+        Section("Here Now")
+        {
+          HStack
+          {
+            BirdIcon(bird: bird)
+              .frame(width: 60, height: 60)
+            Text(bird.speciesName)
+          }
         }
-        .navigationTitle("Visitors")
+      }
+
+      Section("Recent")
+      {
+        RecentBackyardVisitorsView(backyard: backyard)
+      }
     }
+    .navigationTitle("Visitors")
+  }
 }

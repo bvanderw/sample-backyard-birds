@@ -1,18 +1,19 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
+//
+// See the LICENSE.txt file for this sample’s licensing information.
+//
+// Abstract:
+// The widget bundle.
 
-Abstract:
-The widget bundle.
-*/
-
-import WidgetKit
-import SwiftUI
-import SwiftData
 import BackyardBirdsData
+import SwiftData
+import SwiftUI
+import WidgetKit
 
 @main
-struct WidgetsBundle: WidgetBundle {
-    var body: some Widget {
-        BackyardWidget()
-    }
+struct WidgetsBundle: WidgetBundle
+{
+  var body: some Widget
+  {
+    BackyardWidget()
+  }
 }
